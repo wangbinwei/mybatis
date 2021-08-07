@@ -75,4 +75,19 @@ public class ListUtil {
         return pa;
     }
 
+    public ListNode middleNode(ListNode head) {
+        //快慢指针法
+        ListNode slow=head,fast=head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            System.out.println("slow:"+ slow.val);
+
+            System.out.println("fast:"+ fast.val);
+        }
+        return slow;
+    }
+
+
 }

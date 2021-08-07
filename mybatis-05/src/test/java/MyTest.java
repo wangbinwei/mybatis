@@ -27,6 +27,14 @@ public class MyTest {
     }
     @Test
     public void queryById(){
+        Map map = new HashMap<Integer, Integer>(1);
+        map.put(1,2);
+        map.put(1,3);
+        System.out.println(map.get(2));
+        System.out.println(map.get(1));
+        LinkedList<Map<Integer, Integer>> head = new LinkedList<Map<Integer, Integer>>();
+        LinkedList<Object>  link = new LinkedList<>();
+        System.out.println(link.size());
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
 //        Map<String, String> map = new HashMap<>();
@@ -95,6 +103,15 @@ public class MyTest {
 //            System.out.println(headB.val);
 //            headB = headB.next;
 //        }
+
+    }
+    @Test
+    public void testmiddleNode() {
+        int[] arrayA = new int[]{1,2,3,4,5};
+        ListUtil listUtilA = new ListUtil();
+        ListNode head = listUtilA.init(arrayA);
+        ListNode listNode = listUtilA.middleNode(head);
+        System.out.println(listNode.val);
 
     }
 }
